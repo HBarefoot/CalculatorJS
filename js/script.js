@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", function(event){
   var result
 
   addEvent(listLink)
-
-
   /**
   *  This function itera over an object adding an event Handler "click",
   */
