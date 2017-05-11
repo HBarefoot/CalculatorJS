@@ -10,7 +10,7 @@ h1 {
 
 #container {
   width: 366px;
-  height: 657px;
+  height: 647px;
   background-color: black;
   margin: auto;
   padding: 5px;
@@ -20,7 +20,7 @@ h1 {
 
 #screen {
   width: 365px;
-  height: 100px;
+  height: 90px;
   border: solid 1px black;
   border-radius: 5px;
   background-color: gray;
