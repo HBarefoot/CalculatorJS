@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event){
+document.addEventListener("DOMContentLoaded", function(){
   var listLink = document.querySelectorAll(".btn")
   var outPut = document.querySelector("#screen")
   var dataToScreen = ""
@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function(event){
             dataToScreen = ""
             appendToScreen("0")
           }
+        } else if (isNaN(this.innerText) || this.innerText === "Infinity") {
+          console.log(typeof dataToScreen)
+          dataToScreen = ""
+          appendToScreen("0")
         } else {
           appendToScreen(eval(dataToScreen))
         }
