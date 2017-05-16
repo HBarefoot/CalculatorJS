@@ -19,12 +19,14 @@ document.addEventListener("DOMContentLoaded", function(){
             dataToScreen = ""
             appendToScreen("0")
           }
-        } else if (isNaN(this.innerText) || this.innerText === "Infinity") {
-          console.log(typeof dataToScreen)
-          dataToScreen = ""
-          appendToScreen("0")
         } else {
-          appendToScreen(eval(dataToScreen))
+          result = eval(dataToScreen)
+          if (!result || !isFinite(result)){
+            appendToScreen(result = 0)
+            dataToScreen = ""
+          } else {
+            appendToScreen(result)
+          }
         }
       })
     }
