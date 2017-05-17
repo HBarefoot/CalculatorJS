@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var result
 
   addEvent(listLink)
+
   /**
   *  This function itera over an object adding an event Handler "click",
   */
@@ -14,10 +15,11 @@ document.addEventListener("DOMContentLoaded", function(){
         if (this.innerText !== "="){
           if (this.innerText !== "C"){
             appendToScreen(dataToScreen += this.innerText)
-            console.log(dataToScreen);
+            styleCSS(dataToScreen)
           } else {
             dataToScreen = ""
             appendToScreen("0")
+            outPut.style = "font-size: 70px;"
           }
         } else {
           result = eval(dataToScreen)
@@ -41,5 +43,26 @@ document.addEventListener("DOMContentLoaded", function(){
   //append data to screen
   function appendToScreen(obj){
     outPut.innerText = obj
+  }
+
+  //Changin style
+  function styleCSS(obj){
+    // console.log(obj.length)
+    switch (obj.length) {
+      case 9:
+      outPut.style = "font-size: 35px;"
+      break;
+      case 17:
+      dataToScreen += "\n"
+      break;
+      case 36:
+      alert("No more number for you !")
+      appendToScreen("0")
+      dataToScreen = ""
+      outPut.style = "font-size: 70px;"
+      break;
+      default:
+
+    }
   }
 });
